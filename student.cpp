@@ -42,6 +42,7 @@ void Student::setDaysInCourse(int * days) {
 
 
 // getters
+//FIXME: add setter and getter for Degree
 
 string Student::getStudentId() const {
 	return studentID;
@@ -63,11 +64,31 @@ int Student::getAge() const {
 	return age;
 }
 
-
-int Student::getDaysInCourse() {
+int Student::getDaysInCourse() const {
 	return *daysInCourse;
 }
 
-/*
-Degree Student::getDegree() {}
-*/
+Degree Student::getDegreeName() const {
+	return Degree();
+}
+
+void Student::print() {
+
+}
+
+Student::Student(string studentID, string firstName, string lastName, string email, int age, int * days, Degree degreeName){
+	studentID = studentID;
+	firstName = firstName;
+	lastName = lastName;
+	emailAddress = email;
+	age = age;
+	setDaysInCourse(days);
+	degreeName = degreeName;
+}
+
+Student::~Student(){}
+
+
+Degree Student::getDegreeProgram() {
+	return Degree();
+}

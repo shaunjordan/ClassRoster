@@ -1,8 +1,7 @@
 #pragma once
-#pragma once
 
 #include <string>
-//#include "degree.h"
+#include "degree.h"
 
 class Student {
 
@@ -14,6 +13,7 @@ private:
 	std::string emailAddress;
 	int			age;
 	int			daysInCourse[3];
+	Degree		degreeName;
 
 public:
 
@@ -24,18 +24,20 @@ public:
 	void setAge(int age);
 	void setEmail(std::string email);
 	void setDaysInCourse(int * days);
-	//void setDegree();
+	//void setDegree(); //FIXME: define
 
 	// getters
 	std::string getStudentId() const;
 	std::string getFirstName() const;
 	std::string getLastName() const;
-	int			getAge() const;
-	int 		getDaysInCourse();
 	std::string getEmail() const;
+	int			getAge() const;
+	int 		getDaysInCourse() const;
+	Degree		getDegreeName() const;
+	
 
-
-	//virtual void print();
-	//virtual Degree getDegree();
-	//Student();
+	Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int * days, Degree degreeName);
+	virtual void print();
+	~Student();
+	virtual Degree getDegreeProgram(); //FIXME: define
 };
