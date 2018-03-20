@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
-#include <string>
+
 
 #include "student.h"
 using namespace std;
@@ -8,17 +8,17 @@ using namespace std;
 // setters
 
 void Student::setStudentID(string id) {
-	studentID = id;
+	studentID = studentID;
 	return;
 }
 
 void Student::setFirstName(string fn) {
-	firstName = fn;
+	firstName = firstName;
 	return;
 }
 
 void Student::setLastName(string ln) {
-	lastName = ln;
+	lastName = lastName;
 	return;
 }
 
@@ -27,24 +27,27 @@ void Student::setEmail(string email) {
 	return;
 }
 
-void Student::setAge(int age) {
+void Student::setAge(int studentAge) {
 	age = age;
 	return;
 }
 
-
-void Student::setDaysInCourse(int * days) {
+void Student::setDaysInCourse(int *days) {
 	for (int i = 0; i < 3; i++) {
 		daysInCourse[i] = days[i];
 	}
 	return;
 }
 
+void Student::setDegree(Degree degree) {
+	degreeName = degree;
+}
+
 
 // getters
 //FIXME: add setter and getter for Degree
 
-string Student::getStudentId() const {
+string Student::getStudentID() const{
 	return studentID;
 }
 
@@ -64,26 +67,42 @@ int Student::getAge() const {
 	return age;
 }
 
-int Student::getDaysInCourse() const {
-	return *daysInCourse;
+int* Student::getDaysInCourse(){
+	return daysInCourse;
 }
 
 Degree Student::getDegreeName() const {
-	return Degree();
+	return degreeName;
 }
 
 void Student::print() {
 
+	int *courseDays = getDaysInCourse();
+
+	cout << firstName << " " << lastName << endl;
+	cout << emailAddress << endl;
+	cout << "Age: " << age << endl;
+	cout << "Days in course: " << *courseDays << " " << *(courseDays +1) << " " << *(courseDays + 2) << endl;
+	
+	if (getDegreeName() == 0) {
+		cout << "Security" << endl;
+	}
+	else if (getDegreeName() == 1) {
+		cout << "Networking" << endl;
+	}
+	else if (getDegreeName() == 2) {
+		cout << "Software" << endl;
+	}
 }
 
-Student::Student(string studentID, string firstName, string lastName, string email, int age, int * days, Degree degreeName){
-	studentID = studentID;
-	firstName = firstName;
-	lastName = lastName;
+Student::Student(string id, string fn, string ln, string email, int studentAge, int * days, Degree degree){
+	studentID = id;
+	firstName = fn;
+	lastName = ln;
 	emailAddress = email;
-	age = age;
+	age = studentAge;
 	setDaysInCourse(days);
-	degreeName = degreeName;
+	degreeName = degree;
 }
 
 Student::~Student(){}

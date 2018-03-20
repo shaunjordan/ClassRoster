@@ -21,18 +21,18 @@ public:
 	void setStudentID(std::string id);
 	void setFirstName(std::string fn);
 	void setLastName(std::string ln);
-	void setAge(int age);
+	void setAge(int studentAge);
 	void setEmail(std::string email);
 	void setDaysInCourse(int * days);
-	//void setDegree(); //FIXME: define
+	void setDegree(Degree degree);
 
 	// getters
-	std::string getStudentId() const;
+	std::string getStudentID() const;
 	std::string getFirstName() const;
 	std::string getLastName() const;
 	std::string getEmail() const;
 	int			getAge() const;
-	int 		getDaysInCourse() const;
+	int* 		getDaysInCourse();
 	Degree		getDegreeName() const;
 	
 
