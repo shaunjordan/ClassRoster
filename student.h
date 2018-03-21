@@ -36,8 +36,8 @@ public:
 	Degree		getDegreeName() const;
 	
 
-	Student(std::string studentID, std::string firstName, std::string lastName, std::string email, int age, int * days, Degree degreeName);
+	Student(std::string id, std::string fn, std::string ln, std::string email, int studentAge, int * days, Degree degree);
 	virtual void print();
 	~Student();
-	virtual Degree getDegreeProgram(); //FIXME: define
+	virtual Degree getDegreeProgram();
 };

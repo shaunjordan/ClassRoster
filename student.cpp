@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
 
-
 #include "student.h"
 using namespace std;
 
@@ -45,7 +44,6 @@ void Student::setDegree(Degree degree) {
 
 
 // getters
-//FIXME: add setter and getter for Degree
 
 string Student::getStudentID() const{
 	return studentID;
@@ -79,19 +77,23 @@ void Student::print() {
 
 	int *courseDays = getDaysInCourse();
 
+	cout << studentID << endl;
 	cout << firstName << " " << lastName << endl;
 	cout << emailAddress << endl;
 	cout << "Age: " << age << endl;
-	cout << "Days in course: " << *courseDays << " " << *(courseDays +1) << " " << *(courseDays + 2) << endl;
+	cout << "Days in course: " << *courseDays << " " << *(courseDays + 1) << " " << *(courseDays + 2) << endl;
 	
 	if (getDegreeName() == 0) {
-		cout << "Security" << endl;
+		cout << "SECURITY" << endl;
 	}
 	else if (getDegreeName() == 1) {
-		cout << "Networking" << endl;
+		cout << "NETWORK" << endl;
 	}
 	else if (getDegreeName() == 2) {
-		cout << "Software" << endl;
+		cout << "SOFTWARE" << endl;
+	}
+	else {
+		cout << "Degree not specified" << endl;
 	}
 }
 
