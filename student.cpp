@@ -78,10 +78,8 @@ void Student::print() {
 	int *courseDays = getDaysInCourse();
 
 	cout << studentID << endl;
-	cout << firstName << " " << lastName << endl;
-	cout << emailAddress << endl;
-	cout << "Age: " << age << endl;
-	cout << "Days in course: " << *courseDays << " " << *(courseDays + 1) << " " << *(courseDays + 2) << endl;
+	cout << "First Name: " << firstName << "\t" << "Last Name: " << lastName << "\t" << "Age: " << age << "\t";
+	cout << "daysInCourse: {" << *courseDays << " " << *(courseDays + 1) << " " << *(courseDays + 2) << "}" << "\t";
 	
 	if (getDegreeName() == 0) {
 		cout << "SECURITY" << endl;
@@ -91,9 +89,6 @@ void Student::print() {
 	}
 	else if (getDegreeName() == 2) {
 		cout << "SOFTWARE" << endl;
-	}
-	else {
-		cout << "Degree not specified" << endl;
 	}
 }
 

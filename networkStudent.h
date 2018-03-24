@@ -11,4 +11,5 @@ class NetworkStudent : public Student {
 	public:
 
 		virtual Degree getDegreeProgram();
+		using Student::Student;
 };

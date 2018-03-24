@@ -11,5 +11,5 @@ class SoftwareStudent : public Student {
 	public:
 
 		virtual Degree getDegreeProgam();
-
+		using Student::Student;
 };

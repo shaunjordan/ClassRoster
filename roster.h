@@ -6,15 +6,16 @@
 #include "softwareStudent.h"
 
 class Roster {
-	// Student *classRosterArray[];
 
 	public:
-	
+		
+		Student * classRosterArray[5] = {nullptr};
 		void add(std::string studentId, std::string fName, std::string lName, std::string email, int studentAge, int daysInCourse1, int daysInCourse2, int daysInCourse3, Degree degree);
 		void remove(std::string studentId);
 		void printAll();
 		void printDaysInCourse(std::string studentId);
 		void printInvalidEmails();
 		void printByDegreeProgram(int degreeProgram);
+		void test();
 		~Roster();
 };
